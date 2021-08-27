@@ -1,0 +1,28 @@
+package app.lonzh.baselibrary.util
+
+/**
+ *
+ * @ProjectName:    lisper
+ * @Description:    描述
+ * @Author:         Lisper
+ * @CreateDate:     2021/6/25 11:15 上午
+ * @UpdateUser:     Lisper：
+ * @UpdateDate:     2021/6/25 11:15 上午
+ * @UpdateRemark:   更新说明：
+ * @Version:        1.0
+ */
+
+/**
+ * 延迟加载时间(毫秒)）
+ */
+const val RELAY_LOAD = 400L
+
+/**
+ * 延迟打开软件盘
+ */
+const val RELAY_KEYBOARD = 200L
+
+/**
+ * 默认加载页
+ */
+const val PAGE_SIZE = 20

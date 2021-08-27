@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_80"
+        android:background="@drawable/shape_loading_bg"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:ignore="MissingConstraints">
+
+        <ProgressBar
+            android:indeterminateDrawable="@drawable/ic_white_loading"
+            android:indeterminate="false"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"/>
+
+        <TextView
+            android:id="@+id/tv_msg"
+            android:layout_marginTop="@dimen/dp_4"
+            tools:text="@string/app_name"
+            android:textColor="@color/color_33"
+            android:textSize="@dimen/text_12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

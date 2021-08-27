@@ -1,0 +1,15 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        mavenCentral { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://jitpack.io' }
+        maven { url "https://s01.oss.sonatype.org/content/groups/public" }
+    }
+}
+rootProject.name = "video_control"
+include ':app'
+include ':base-library'
+include ':net-library'
+include ':common-library'

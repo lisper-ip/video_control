@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        tools:layout="@layout/fragment_main"
+        android:id="@+id/mainFragment"
+        android:name="app.lonzh.videocontrol.fragment.MainFragment"
+        android:label="MainFragment" >
+        <action
+            app:enterAnim="@anim/window_bottom_in"
+            app:popExitAnim="@anim/window_bottom_out"
+            android:id="@+id/action_mainFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            app:enterAnim="@anim/window_bottom_in"
+            app:popExitAnim="@anim/window_bottom_out"
+            android:id="@+id/action_mainFragment_to_scanFragment"
+            app:destination="@id/scanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webFragment"
+        tools:layout="@layout/fragment_web"
+        android:name="app.lonzh.videocontrol.fragment.WebFragment"
+        android:label="WebFragment" >
+
+        <argument
+            android:name="title"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="url"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        tools:layout="@layout/fragment_map"
+        android:name="app.lonzh.videocontrol.fragment.main.MapFragment"
+        android:label="MapFragment" />
+    <fragment
+        android:id="@+id/scanFragment"
+        tools:layout="@layout/fragment_scan"
+        android:name="app.lonzh.videocontrol.fragment.main.ScanFragment"
+        android:label="ScanFragment" />
+</navigation>
