@@ -27,7 +27,7 @@
         <TextView
             android:layout_marginTop="@dimen/dp_4"
             app:layout_constraintTop_toBottomOf="@id/iv_pic"
-            android:text="@{bean.title}"
+            android:text="@{bean.strId}"
             android:textColor="@color/color_33"
             android:textSize="@dimen/text_12sp"
             app:layout_constraintRight_toRightOf="parent"

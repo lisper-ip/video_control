@@ -5,5 +5,5 @@ package app.lonzh.videocontrol.data.bean
  */
 class HomeMenu(
     val resId: Int,
-    val title: String
+    val strId: Int
 )
