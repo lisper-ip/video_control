@@ -2,13 +2,7 @@ package app.lonzh.travel.startup
 
 import android.app.Application
 import android.content.Context
-import android.graphics.Color
 import android.graphics.drawable.Drawable
-import android.text.TextUtils
-import android.util.TypedValue
-import android.view.Gravity
-import android.view.ViewGroup
-import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import app.lonzh.commonlibrary.ext.appContext
@@ -16,6 +10,7 @@ import app.lonzh.netlibrary.RxHttpManager
 import app.lonzh.videocontrol.BuildConfig
 import app.lonzh.videocontrol.R
 import app.lonzh.videocontrol.data.StateData
+import com.drake.brv.BR
 import com.drake.brv.PageRefreshLayout
 import com.drake.brv.utils.BRV
 import com.drake.logcat.LogCat
@@ -27,7 +22,6 @@ import com.rousetime.android_startup.AndroidStartup
 import com.scwang.smart.refresh.footer.ClassicsFooter
 import com.scwang.smart.refresh.header.MaterialHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
-import com.tencent.bugly.crashreport.CrashReport
 import com.tencent.mmkv.MMKV
 
 
@@ -55,10 +49,10 @@ class CommonMainStartUp : AndroidStartup<String>(){
      * @param [context]
      */
     override fun create(context: Context): String? {
-        CrashReport.initCrashReport(context, "f8ebcaff63", BuildConfig.DEBUG)
+        //CrashReport.initCrashReport(context, "f8ebcaff63", BuildConfig.DEBUG)
         MMKV.initialize(context)
         ToastUtils.init(context as Application)
-        //BRV.modelId = BR.bean
+        BRV.modelId = BR.bean
         RxHttpManager.init(context)
         PageRefreshLayout.startIndex = 1
         SmartRefreshLayout.setDefaultRefreshHeaderCreator { mContext, _ ->
@@ -69,7 +63,7 @@ class CommonMainStartUp : AndroidStartup<String>(){
         }
         TitleBar.setDefaultStyle(object : LightBarStyle() {
             override fun createBackIcon(context: Context): Drawable {
-                return getDrawableResources(context, R.drawable.ic_back)
+                return getDrawableResources(context, R.drawable.ic_white_back)
             }
         })
 

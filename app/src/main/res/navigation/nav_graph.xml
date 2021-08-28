@@ -6,26 +6,37 @@
     app:startDestination="@id/mainFragment">
 
     <fragment
-        tools:layout="@layout/fragment_main"
         android:id="@+id/mainFragment"
         android:name="app.lonzh.videocontrol.fragment.MainFragment"
-        android:label="MainFragment" >
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
         <action
-            app:enterAnim="@anim/window_bottom_in"
-            app:popExitAnim="@anim/window_bottom_out"
             android:id="@+id/action_mainFragment_to_mapFragment"
-            app:destination="@id/mapFragment" />
+            app:destination="@id/mapFragment"
+            app:enterAnim="@anim/window_right_in"
+            app:exitAnim="@anim/window_left_out"
+            app:popEnterAnim="@anim/window_left_in"
+            app:popExitAnim="@anim/window_right_out" />
         <action
-            app:enterAnim="@anim/window_bottom_in"
-            app:popExitAnim="@anim/window_bottom_out"
             android:id="@+id/action_mainFragment_to_scanFragment"
-            app:destination="@id/scanFragment" />
+            app:destination="@id/scanFragment"
+            app:enterAnim="@anim/window_right_in"
+            app:exitAnim="@anim/window_left_out"
+            app:popEnterAnim="@anim/window_left_in"
+            app:popExitAnim="@anim/window_right_out" />
+        <action
+            app:enterAnim="@anim/window_right_in"
+            app:exitAnim="@anim/window_left_out"
+            app:popEnterAnim="@anim/window_left_in"
+            app:popExitAnim="@anim/window_right_out"
+            android:id="@+id/action_mainFragment_to_diningListFragment"
+            app:destination="@id/diningListFragment" />
     </fragment>
     <fragment
         android:id="@+id/webFragment"
-        tools:layout="@layout/fragment_web"
         android:name="app.lonzh.videocontrol.fragment.WebFragment"
-        android:label="WebFragment" >
+        android:label="WebFragment"
+        tools:layout="@layout/fragment_web">
 
         <argument
             android:name="title"
@@ -39,12 +50,17 @@
     </fragment>
     <fragment
         android:id="@+id/mapFragment"
-        tools:layout="@layout/fragment_map"
         android:name="app.lonzh.videocontrol.fragment.main.MapFragment"
-        android:label="MapFragment" />
+        android:label="MapFragment"
+        tools:layout="@layout/fragment_map" />
     <fragment
         android:id="@+id/scanFragment"
-        tools:layout="@layout/fragment_scan"
         android:name="app.lonzh.videocontrol.fragment.main.ScanFragment"
-        android:label="ScanFragment" />
+        android:label="ScanFragment"
+        tools:layout="@layout/fragment_scan" />
+    <fragment
+        android:id="@+id/diningListFragment"
+        tools:layout="@layout/fragment_dining_list"
+        android:name="app.lonzh.videocontrol.fragment.home.DiningListFragment"
+        android:label="DiningListFragment" />
 </navigation>

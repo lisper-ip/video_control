@@ -8,7 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="color_default">#5899ff</color>
+    <color name="color_default">#0853B3</color>
     <color name="color_normal">@color/color_99</color>
 
     <color name="state_text">#bfbfbf</color>

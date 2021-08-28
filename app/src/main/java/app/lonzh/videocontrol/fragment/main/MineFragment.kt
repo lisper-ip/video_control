@@ -22,6 +22,9 @@ class MineFragment : LisperFragment<BaseViewModel, FragmentMineBinding>() {
         get() = R.layout.fragment_mine
 
     override fun initView(savedInstanceState: Bundle?) {
-
+        setTitle(R.string.main_tab_5)
+        titleBar?.let {
+            it.leftIcon = null
+        }
     }
 }

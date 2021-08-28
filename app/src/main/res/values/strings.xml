@@ -10,4 +10,15 @@
     <string name="main_tab_4">稽查</string>
     <string name="main_tab_5">我的</string>
     <string name="waiting_for">敬请期待</string>
+    <string name="input_keyword">请输入关键字</string>
+    <string name="open_camera_failed">摄像头打开失败</string>
+    <string name="app_news">食安资讯</string>
+    <string name="dining_info">餐厅信息</string>
+    <string name="dcba">大餐备案</string>
+    <string name="spsy">食品溯源</string>
+    <string name="tscl">投诉处理</string>
+    <string name="ycxc">远程巡查</string>
+    <string name="xcjc">现场检查</string>
+    <string name="ctsh">餐厅审核</string>
+    <string name="sbsh">设备审核</string>
 </resources>
