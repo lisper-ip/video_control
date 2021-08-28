@@ -72,5 +72,6 @@ class MainFragment : LisperFragment<BaseViewModel, FragmentMainBinding>(){
         }
     }
 
-
+    override fun createObserver() {
+    }
 }

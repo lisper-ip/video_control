@@ -11,6 +11,7 @@ import app.lonzh.videocontrol.databinding.FragmentHomeBinding
 import app.lonzh.videocontrol.fragment.base.LisperFragment
 import com.drake.brv.utils.grid
 import com.drake.brv.utils.linear
+import com.drake.brv.utils.models
 import com.drake.brv.utils.setup
 
 /**
@@ -66,7 +67,7 @@ class HomeFragment : LisperFragment<BaseViewModel, FragmentHomeBinding>() {
                     else -> {}
                 }
             }
-        }.models = menus
+        }
 
         binding.newsRecycle.linear().setup {
             addType<String>(R.layout.item_home_new)
@@ -74,7 +75,12 @@ class HomeFragment : LisperFragment<BaseViewModel, FragmentHomeBinding>() {
             onClick(R.id.item){
 
             }
-        }.models = mutableListOf<String>().apply {
+        }
+    }
+
+    override fun lazyLoad() {
+        binding.menuRecycle.models = menus
+        binding.newsRecycle.models = mutableListOf<String>().apply {
             add("资讯1")
             add("资讯2")
             add("资讯3")

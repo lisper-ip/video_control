@@ -1,6 +1,8 @@
 package app.lonzh.videocontrol.vm
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import app.lonzh.videocontrol.data.bean.UserInfo
 
 /**
  *
@@ -14,5 +16,9 @@ import androidx.lifecycle.ViewModel
  * @Version:        1.0
  */
 class AppDataViewModel : ViewModel(){
+    /**
+     * 用户信息
+     */
+    val userInfo = MutableLiveData<UserInfo?>(null)
 
 }

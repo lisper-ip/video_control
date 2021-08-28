@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="app.lonzh.videocontrol.vm.state.login.LoginStateViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_bg"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:src="@mipmap/ic_login_bg"
+            app:layout_constraintDimensionRatio="h, 1500:1000"/>
+
+        <TextView
+            app:layout_constraintBottom_toBottomOf="@id/iv_bg"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/text_20sp"
+            android:textColor="@color/white"
+            android:text="@string/app_name"
+            android:drawableTop="@mipmap/ic_login_logo"
+            android:id="@+id/tv_login_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/view"
+            app:layout_constraintDimensionRatio="h, 1500:850"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintTop_toBottomOf="@id/view"
+            android:layout_marginStart="@dimen/dp_10"
+            android:paddingStart="@dimen/dp_20"
+            android:paddingEnd="@dimen/dp_20"
+            android:paddingTop="@dimen/dp_15"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="@drawable/shape_white_round_bg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200">
+
+            <com.google.android.material.textfield.TextInputEditText
+                app:layout_constraintTop_toTopOf="parent"
+                android:drawableStart="@mipmap/ic_login_phone"
+                android:id="@+id/edt_mobile"
+                android:background="@null"
+                android:text="@={vm.mobile}"
+                android:drawablePadding="@dimen/dp_6"
+                android:textColorHint="@color/color_99"
+                android:textSize="@dimen/text_14sp"
+                android:textColor="@color/color_33"
+                android:maxLines="1"
+                android:inputType="phone"
+                android:hint="@string/please_input_mobile"
+                android:layout_width="match_parent"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:id="@+id/line"
+                app:layout_constraintTop_toBottomOf="@id/edt_mobile"
+                android:background="@color/color_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_marginTop="@dimen/dp_4"
+                app:layout_constraintTop_toBottomOf="@id/line"
+                android:drawableStart="@mipmap/ic_login_number"
+                android:id="@+id/edt_code"
+                android:background="@null"
+                android:text="@={vm.code}"
+                android:drawablePadding="@dimen/dp_6"
+                android:textColorHint="@color/color_99"
+                android:textSize="@dimen/text_14sp"
+                android:textColor="@color/color_33"
+                android:maxLines="1"
+                android:inputType="number"
+                android:hint="@string/please_input_code"
+                android:layout_width="match_parent"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:layout_height="wrap_content"/>
+
+            <app.lonzh.videocontrol.widget.CountdownView
+                android:gravity="center"
+                android:minWidth="@dimen/dp_100"
+                android:textColor="@color/white"
+                android:background="@drawable/shape_default_round_bg"
+                app:layout_constraintRight_toRightOf="parent"
+                android:textSize="@dimen/text_12sp"
+                android:text="@string/get_code"
+                android:id="@+id/tv_send"
+                app:layout_constraintBottom_toBottomOf="@id/edt_code"
+                app:layout_constraintTop_toTopOf="@id/edt_code"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"/>
+
+            <View
+                android:layout_marginTop="@dimen/dp_4"
+                android:id="@+id/line2"
+                app:layout_constraintTop_toBottomOf="@id/edt_code"
+                android:background="@color/color_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"/>
+
+            <TextView
+                android:id="@+id/tv_login"
+                android:layout_marginTop="@dimen/dp_30"
+                app:layout_constraintTop_toBottomOf="@id/line2"
+                android:background="@drawable/shape_default_round_bg"
+                android:gravity="center"
+                android:text="登录"
+                android:textSize="@dimen/text_15sp"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -10,6 +10,7 @@ import app.lonzh.commonlibrary.vm.BaseViewModel
 import app.lonzh.videocontrol.databinding.ActivityMainBinding
 import app.lonzh.videocontrol.fragment.MainFragment
 import app.lonzh.videocontrol.fragment.base.LisperFragment
+import app.lonzh.videocontrol.fragment.login.LoginFragment
 import app.lonzh.videocontrol.vm.AppDataViewModel
 import com.blankj.utilcode.util.KeyboardUtils
 import com.drake.logcat.LogCat
@@ -36,7 +37,7 @@ class MainActivity : BaseVmDbActivity<BaseViewModel, ActivityMainBinding>() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
         //获取当前fragment
         val fragment = mainNavFragment?.childFragmentManager?.primaryNavigationFragment
-        if (fragment is MainFragment) {
+        if (fragment is MainFragment || fragment is LoginFragment) {
             moveTaskToBack(true)
         } else {
             (fragment as? LisperFragment<*, *>)?.onBackPressed()
