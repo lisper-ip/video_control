@@ -40,7 +40,7 @@ class BarGraphItem : View {
         barWith = context.resources.getDimension(R.dimen.dp_40)
 
         barPaint = Paint().apply {
-            color = ContextCompat.getColor(context, R.color.color_default)
+            color = ContextCompat.getColor(context, R.color.color_bar)
             isAntiAlias = true
             isDither = true
         }
