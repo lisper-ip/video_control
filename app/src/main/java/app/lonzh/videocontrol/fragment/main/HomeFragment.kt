@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import app.lonzh.commonlibrary.ext.appContext
 import app.lonzh.commonlibrary.vm.BaseViewModel
@@ -13,6 +14,7 @@ import app.lonzh.videocontrol.data.bean.HomeMenu
 import app.lonzh.videocontrol.data.bean.LineData
 import app.lonzh.videocontrol.databinding.FragmentHomeBinding
 import app.lonzh.videocontrol.fragment.base.LisperFragment
+import app.lonzh.videocontrol.vm.state.home.HomeStateViewModel
 import app.lonzh.videocontrol.widget.BarGraphItem
 import com.drake.brv.utils.grid
 import com.drake.brv.utils.linear
@@ -24,6 +26,8 @@ import kotlin.random.Random
  * 首页
  */
 class HomeFragment : LisperFragment<BaseViewModel, FragmentHomeBinding>() {
+
+    private val homeStateViewModel: HomeStateViewModel by viewModels()
 
     private val menus = mutableListOf<HomeMenu>().apply {
         add(HomeMenu(R.mipmap.ic_home_msg, R.string.dining_info))
@@ -63,12 +67,12 @@ class HomeFragment : LisperFragment<BaseViewModel, FragmentHomeBinding>() {
                 when(modelPosition){
                     0 -> nav(R.id.action_mainFragment_to_diningListFragment)
                     1 ->{}
-                    2 ->{}
+                    2 -> nav(R.id.action_mainFragment_to_scanFragment)
                     3 ->{}
                     4 ->{}
                     5 ->{}
                     6 ->{}
-                    7 ->{}
+                    7 -> toast(context.getString(R.string.waiting_for))
                     else -> {}
                 }
             }
@@ -99,16 +103,5 @@ class HomeFragment : LisperFragment<BaseViewModel, FragmentHomeBinding>() {
 
     override fun lazyLoad() {
         binding.menuRecycle.models = menus
-        binding.newsRecycle.models = mutableListOf<String>().apply {
-            add("资讯1")
-            add("资讯2")
-            add("资讯3")
-        }
-        binding.lineRecycle.models = mutableListOf<LineData>().apply {
-            add(LineData(0.4f))
-            add(LineData(0.2f))
-            add(LineData(0.7f))
-            add(LineData(0.99f))
-        }
     }
 }

@@ -11,8 +11,6 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import app.lonzh.videocontrol.R
 import com.blankj.utilcode.util.ConvertUtils
-import com.blankj.utilcode.util.ScreenUtils
-import com.drake.logcat.LogCat
 
 /**
  * 柱状图item
@@ -86,9 +84,4 @@ class BarGraphItem : View {
         this.ratio = ratio
         invalidate()
     }
-
-    fun getRatio(): Float{
-        return ratio
-    }
-
 }

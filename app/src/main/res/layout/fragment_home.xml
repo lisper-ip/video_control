@@ -27,6 +27,101 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintTop_toBottomOf="@+id/titleBar"
+                app:layout_constraintBottom_toBottomOf="@id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide"
+                    android:layout_width="@dimen/dp_1"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5"
+                    android:layout_height="match_parent"/>
+
+                <app.lonzh.videocontrol.widget.HomePercentView
+                    android:id="@+id/home_percent"
+                    android:layout_margin="@dimen/dp_10"
+                    app:layout_constraintLeft_toLeftOf="@id/guide"
+                    app:layout_constraintRight_toRightOf="@id/guide"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintDimensionRatio="h, 1:1"
+                    app:layout_constraintBottom_toTopOf="@id/tv_percent"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"/>
+
+                <TextView
+                    android:text="0/0"
+                    android:textColor="@color/home_line_title"
+                    android:textSize="@dimen/text_14sp"
+                    android:id="@+id/tv_percent"
+                    app:layout_constraintBottom_toTopOf="@id/tv_percent_title"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_marginBottom="@dimen/dp_6"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:id="@+id/tv_percent_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="@string/home_percent_title"
+                    android:textColor="@color/home_line_title"
+                    android:textSize="@dimen/text_13sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <app.lonzh.videocontrol.widget.HomeSumView
+                    android:layout_marginStart="@dimen/dp_30"
+                    android:layout_marginEnd="@dimen/dp_30"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    app:layout_constraintDimensionRatio="h, 1:1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/home_percent"
+                    android:id="@+id/sum_sh"
+                    app:layout_constraintBottom_toTopOf="@id/tv_sh_title"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"/>
+
+                <TextView
+                    app:layout_constraintRight_toRightOf="@id/sum_sh"
+                    app:layout_constraintLeft_toLeftOf="@id/sum_sh"
+                    android:id="@+id/tv_sh_title"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_percent_title"
+                    android:text="@string/check_task"
+                    android:textColor="@color/home_line_title"
+                    android:textSize="@dimen/text_13sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <app.lonzh.videocontrol.widget.HomeSumView
+                    android:layout_marginStart="@dimen/dp_30"
+                    android:layout_marginEnd="@dimen/dp_30"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    app:layout_constraintDimensionRatio="h, 1:1"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/home_percent"
+                    android:id="@+id/sum_jc"
+                    app:layout_constraintBottom_toTopOf="@id/tv_sh_title"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"/>
+
+                <TextView
+                    app:layout_constraintRight_toRightOf="@id/sum_jc"
+                    app:layout_constraintLeft_toLeftOf="@id/sum_jc"
+                    android:id="@+id/tv_jc_title"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_percent_title"
+                    android:text="@string/jc_task"
+                    android:textColor="@color/home_line_title"
+                    android:textSize="@dimen/text_13sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/con_line"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -47,7 +142,7 @@
                     android:id="@+id/tv_line_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="用餐人数统计"
+                    android:text="@string/complain_stat"
                     android:textColor="@color/home_line_title"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -123,7 +218,9 @@
     </androidx.core.widget.NestedScrollView>
 
     <data>
-
+        <variable
+            name="vm"
+            type="app.lonzh.videocontrol.vm.state.home.HomeStateViewModel" />
     </data>
 
 </layout>
